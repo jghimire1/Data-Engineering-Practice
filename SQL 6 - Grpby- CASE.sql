@@ -30,3 +30,69 @@ LEFT JOIN products ON  order_details.product_id = products.product_id
 GROUP BY order_id
 HAVING SUM (products.price) > 400.00;
 
+--CASE 
+/* The CASE expression goes through conditions and returns a value when the first condition
+is met (like an if-then-else statement).
+Once a condition is true, it will stop reading and return the result. 
+If no conditions are true, it returns the value in the ELSE clause.
+If there is no ELSE part and no conditions are true, it returns NULL. */
+select product_name, 
+CASE 
+	WHEN price < 10 THEN 'Low price product'
+	WHEN price > 50 THEN 'High price product'
+ELSE 
+	'Normal product '
+END 
+FROM products;
+
+-- with aliases 
+-- when a column name is not specified for the 'case' field, the parser uses case as the column name. 
+-- to specify a column name, add an alias after the END keyword. 
+select product_name,
+CASE 
+	WHEN price < 10 THEN 'Low price product'
+	WHEN price > 50 THEN 'High price product'
+ELSE 
+	'Normal product'
+END as "price category"
+from products;
+
+--EXISTS 
+-- The exists operator is used to test for the exitstence of any record in a sub query. 
+-- the exists operator returns TRUE if the sub query returens one or more records. 
+-- Return all customers that is represented in the orders table. 
+SELECT customers.customer_name
+FROM customers 
+WHERE EXISTS (
+select order_id
+from orders 
+where customer_id = customers.customer_id);
+
+--NOT EXISTS 
+--to check which customers that do not have any ordrs, we can use the NOT operator together with 
+--the EXISTS operator;
+--Return all customers is NOT represented in the orders table:
+
+SELECT customers.customer_name
+from customers
+WHERE NOT EXISTS (SELECT order_id 
+from orders 
+where customers.customer_id = customers.customer_id);
+
+--ANY 
+/* the ANY operator allows you to perform a comparison between a single column value and a range of other values:
+the any operator:
+	* returns boolean value as result 
+	* returns TRUE if ANY of the sub query values meet the condition
+ANY means that the condition will be true if the operation is true for any of he values in the range. 
+*/
+-- List product that have any records in the order_details table with a quantity larger than 120.
+
+SELECT product_name
+FROM products
+WHERE product_id = ANY ( 
+SELECT product_id
+FROM order_details
+WHERE quantity > 120);
+
+
