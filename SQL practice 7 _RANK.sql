@@ -89,3 +89,45 @@ FROM examresult
 ORDER BY studentname, Rank;
 
 --DenseRank() SQL Rank function 
+SELECT Studentname, marks, subject,
+DENSE_RANK() OVER (ORDER BY Marks DESC) RANK 
+FROM examresult 
+order by RANK;
+
+--CHECK rank 4 and 5 
+--Partition by 
+UPDATE examresult set marks = 70 where studentname = 'Isabella' and subject = 'Maths';
+
+select studentname, subject, marks, 
+DENSE_RANK() OVER(Partition by studentname order by marks) Rank
+From ExamResult
+ORDER BY studentName, Rank; 
+
+--check rank 1 and 2
+select studentName, Subject, Marks, 
+RANK() OVER (PARTITION BY StudentName ORDER BY Marks) Rank 
+FROM ExamResult
+ORDER BY StudentName, Rank; 
+--check rank and 3
+-- CTE (Commom Table Expressions)
+with t1 as (
+SELECT Studentname, subject, marks, 
+RANK()OVER (PARTITION BY studentName ORDER BY Marks) Rank
+From ExamResult
+ORDER BY StudentName, Rank
+)
+select * from t1 where Rank = 3 ;
+
+-- Multiple CTE 
+with t1 as (
+SELECT StudentName, Subject, Marks, 
+RANK() OVER(PARTITION BY StudentName ORDER BY Marks) Rank
+From ExamResult
+ORDER BY StudentName, Rank
+), 
+t2 as (select StudentName, Rank from t1)
+SELECT * from t2 where Rank = 1;
+
+
+
+
