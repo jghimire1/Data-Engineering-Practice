@@ -80,3 +80,21 @@ Select * from student;
 
 --renaming student table to courses 
 Alter table student rename to courses;
+
+-- 
+select * from courses;
+
+-- Creating a table to record the number of student enrolled in class 
+create table classEnrollment
+(
+class varchar,
+Number_Enrolled int
+);
+-- inserting data into classEnrollment table 
+insert into classEnrollment (class, number_enrolled)
+values 
+('Math', 6),
+('English', 1),
+('Bilology', 1),
+('Computer', 1);
+
