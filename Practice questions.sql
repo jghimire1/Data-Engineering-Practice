@@ -98,3 +98,15 @@ values
 ('Bilology', 1),
 ('Computer', 1);
 
+
+
+-- 
+select * from classEnrollment;
+Drop table classEnrollment; -- dropping table because it does not need
+
+select * from courses;
+
+--Write an SQL query to report all the classes that have at least five students.
+select class, count(student) from courses
+group by class
+having count(student) > 5;
