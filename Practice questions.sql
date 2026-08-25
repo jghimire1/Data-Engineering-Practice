@@ -61,3 +61,22 @@ create table student (
 student varchar,
 class varchar
 ); 
+
+-- insert values into student table 
+insert into student (student, class)
+VALUES 
+('A', 'Math'),
+('B', 'English'),
+('C', 'Math'),
+('D', 'Biology'),
+('E', 'Math'),
+('F', 'Computer'),
+('G', 'Math'),
+('H', 'Math'),
+('I', 'Math');
+
+-- 
+Select * from student;
+
+--renaming student table to courses 
+Alter table student rename to courses;
