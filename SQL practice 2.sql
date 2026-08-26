@@ -123,6 +123,7 @@ Return the result table ordered by rating in descending order.
 The query result format is in the following example.
 */
  -- Output Query 
+-- need to make changes based on the feedback
  select * from cinema 
  where ID %2 AND description != 'boring'
  ORDER BY rating DESC; 
@@ -149,6 +150,5 @@ Output:
 +----+------------+-------------+--------+
 Explanation: 
 We have three movies with odd-numbered IDs: 1, 3, and 5. The movie with ID = 3 is boring so we do not include it in the answer.
-
 */
  
