@@ -52,4 +52,16 @@ print(x)
 print(y)
 print(z)
 
+#output variables
+# The python print() function is often used to output variables
+x = "Python is awesome."
+print(x)
+
+# in the print() function, you output multiple variables, separated by comma:
+# The best way to output multiple variables in the print() function is to separate them with commas, which even support different data types:
+x = "Python"
+y = "is"
+z = "awesome"
+print(x,y,z)
+
 
