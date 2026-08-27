@@ -44,3 +44,12 @@ x=y=z= "Orange"
 print(x)
 print(y)
 print(z)
+#Unpack collection
+# If you have a collection of values in a list, tuple, etc. Python allows you to extract the values into variables. Thi is called unpacking.
+fruits = ["apple", "banana", "cherry"]
+x,y,z = fruits
+print(x)
+print(y)
+print(z)
+
+
