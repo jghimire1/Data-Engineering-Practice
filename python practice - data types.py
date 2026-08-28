@@ -55,3 +55,16 @@ b = "Hello world!"
 print(b[-5:-2])
 
 print("------+++*-----")
+#The Upper() method returns the string in upper case:
+c = "Hello world!"
+print(c.upper())
+
+print(c.lower()) # the lower() method returns the string in lower case.
+
+c = " Hello, World"
+print(c.strip()) # the strip() method removes any whitespace from the beginning or the end:
+
+print(c.replace("H", "J")) #the replace() method replaces a string with another string.
+
+print(c.split(",")) # the split() method splits the string into substrings if it finds instances of the separator.
+
