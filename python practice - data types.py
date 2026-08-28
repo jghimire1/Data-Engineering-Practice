@@ -75,4 +75,15 @@ a = "Hello"
 b = "World"
 c = a + b
 print (c)
+# To add the space between a and b add a " ":
+c = a + " " + b
+print (c)
+
+# we can not combine strings and numbers like this:
+age = 36
+txt = "My name is Janardan, I am " + age
+print(txt)
+
+# But we can combine strings and numbers by using the format() method!
+
 
