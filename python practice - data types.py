@@ -68,3 +68,11 @@ print(c.replace("H", "J")) #the replace() method replaces a string with another 
 
 print(c.split(",")) # the split() method splits the string into substrings if it finds instances of the separator.
 
+print("*************")
+#String concatenation
+# Merge variable a with variable b into variable c:
+a = "Hello"
+b = "World"
+c = a + b
+print (c)
+
