@@ -49,3 +49,23 @@ INSERT INTO orders1 VALUES
 (1008, 3, 102, 1, '2026-01-17'),
 (1009, 1, 103, 2, '2026-01-18'),
 (1010, 4, 105, 5, '2026-01-19');
+
+--q1: Show all customers from Mumbai
+select * from customers1 
+where city = 'Mumbai';
+
+--Q2: Show all products with price greater than 1000
+SELECT * FROM products1
+WHERE price > 1000;
+
+--Q3: Show all electronics products
+SELECT * FROM products1
+WHERE category = 'Electronics';
+
+--Q4: Show all orders placed after 2026-01-14
+SELECT * FROM orders1
+WHERE ORDER_DATE > '2026-01-14';
+
+--Q5: Display customer name and order date for all orders. 
+SELECT c.customer_name, o.order_date 
+from customers1 c join orders1 o ON c.customer_id = o.customer_id; 
