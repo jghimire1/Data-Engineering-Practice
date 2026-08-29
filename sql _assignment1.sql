@@ -69,3 +69,13 @@ WHERE ORDER_DATE > '2026-01-14';
 --Q5: Display customer name and order date for all orders. 
 SELECT c.customer_name, o.order_date 
 from customers1 c join orders1 o ON c.customer_id = o.customer_id; 
+--Q6: Show customer name, product name, quantity ordered 
+SELECT c.customer_name, p.product_name, o.quantity
+FROM customers1 c JOIN orders1 o ON c.customer_id = o.customer_id 
+JOIN products1 p ON p.product_ID = o.product_ID;
+
+--Q7: Display all customers who purchased laptop 
+SELECT c.customer_name, p.product_name
+FROM customers1 c JOIN orders1 o ON c.customer_id = o.customer_id 
+JOIN products1 p ON p.product_ID = o.product_ID
+where product_name = 'Laptop';
