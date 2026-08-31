@@ -123,3 +123,24 @@ JOIN customers1 c ON c.customer_id = o.customer_id
 GROUP BY C.Customer_name
 HAVING COUNT(o.order_id) > 2; 
 
+-- Q15: Show products where total quantity sold is greater than 3.
+SELECT product_id, SUM(quantity) as total_quantity_sold 
+from orders1
+GROUP BY product_id
+HAVING SUM(quantity) > 3; 
+
+---Q16: Rank products based on price (highest first).
+--Use:
+	--RANK()
+SELECT product_name, price, 
+RANK() OVER (ORDER BY price DESC) PRICE_RANK
+FROM products1
+ORDER BY price DESC;
+
+	--DENSE_RANK()
+SELECT product_name, price, 
+DENSE_RANK() OVER (ORDER BY price DESC) PRICE_RANK
+FROM products1
+ORDER BY price DESC;
+
+
