@@ -79,3 +79,21 @@ SELECT c.customer_name, p.product_name
 FROM customers1 c JOIN orders1 o ON c.customer_id = o.customer_id 
 JOIN products1 p ON p.product_ID = o.product_ID
 where product_name = 'Laptop';
+--Q8: Show total amount spent for each order 
+Select o.order_id, p.price * o.quantity as total_amount from orders1 o
+JOIN products1 p ON O.product_id = p.product_id
+GROUP BY order_id, total_amount 
+Order BY order_id; 
+
+-- Q9: Find total quantity ordered for each product 
+SELECT product_id, SUM(quantity) as total_quantity_ordered from orders1
+GROUP BY product_id
+ORDER BY product_id; 
+
+--Q10: find toal sales amount for each category. 
+select p.category, Sum(p.price * o.quantity) as total_sales from orders1 o 
+join products1 p ON o.product_id = p.product_id
+GROUP BY category; 
+
+
+
