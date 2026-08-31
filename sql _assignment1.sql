@@ -142,5 +142,27 @@ SELECT product_name, price,
 DENSE_RANK() OVER (ORDER BY price DESC) PRICE_RANK
 FROM products1
 ORDER BY price DESC;
+---Q17: Find the top 2 most expensive products.
+SELECT product_name, price, price_rank
+FROM (
+	SELECT product_name, price, 
+	DENSE_RANK() OVER (ORDER BY price DESC) price_rank
+FROM products1) ranked 
+WHERE price_rank <= 2
+ORDER BY price_rank;
+
+--Q18: Rank customers based on total spending.
+
+SELECT 
+    c.customer_id,
+    c.customer_name,
+    SUM(p.price * o.quantity) AS total_spending,
+    DENSE_RANK() OVER (ORDER BY SUM(p.price * o.quantity) DESC) AS spending_rank
+FROM customers1 c
+JOIN orders1 o ON c.customer_id = o.customer_id
+JOIN products1 p ON o.product_id = p.product_id
+GROUP BY c.customer_id, c.customer_name
+ORDER BY spending_rank;
+
 
 
