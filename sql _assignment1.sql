@@ -108,5 +108,18 @@ ROUND(AVG(price), 2) AS Avg_price
 FROM products1
 Group by Category; 
 
+--Q13: Show categories where total sales amount is greater than 50000.
 
+select p.category, Sum(p.price * o.quantity) as total_sales 
+from orders1 o 
+join products1 p ON o.product_id = p.product_id
+GROUP BY p.category
+HAVING SUM(p.price * o.quantity)> 50000; 
+
+--Q14: Find customers who placed more than 2 orders
+Select c.customer_name,  COUNT(o.order_id) as total_orders
+From orders1 o 
+JOIN customers1 c ON c.customer_id = o.customer_id
+GROUP BY C.Customer_name
+HAVING COUNT(o.order_id) > 2; 
 
