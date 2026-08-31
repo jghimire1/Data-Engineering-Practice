@@ -95,5 +95,18 @@ select p.category, Sum(p.price * o.quantity) as total_sales from orders1 o
 join products1 p ON o.product_id = p.product_id
 GROUP BY category; 
 
+--Q11: Find total number of orders placed by each customer.
+
+Select c.customer_name,  COUNT(o.order_id) as total_orders
+From orders1 o 
+JOIN customers1 c ON c.customer_id = o.customer_id
+GROUP BY Customer_name; 
+
+--Q12: Show average product price by category 
+SELECT category, 
+ROUND(AVG(price), 2) AS Avg_price
+FROM products1
+Group by Category; 
+
 
 
