@@ -145,3 +145,40 @@ print(bool(123))
 
 bool(["apple", "cherry", "banana"])
 print(bool(["apple", "cherry", "banana"]))
+
+
+# some values are false
+print("some values are false----------------------")
+# In fact, there are not many values that evaluate to False, except empty values, such as (), {},[], "",
+# the number o, and the value none. And of course, the value evaluates to False.
+# The following will return false:
+bool(False)
+bool(None)
+bool(0)
+bool("")
+bool(())
+bool([])
+
+#Numbers
+print("Numbers----------------")
+x = 1 # int
+y = 2.8 # float
+
+# int
+# x = 1
+y = 3625633246511
+z = - 3255522
+print(type(x))
+print(type(y))
+print(type(z))
+
+#float
+print("Float----------------")
+# Float, or "floating point number" is a number, positive or negative, contatining one or more decimals
+x = 1.10
+y = 1.0
+z = -35.59
+
+print(type(x))
+print(type(y))
+print(type(z))
