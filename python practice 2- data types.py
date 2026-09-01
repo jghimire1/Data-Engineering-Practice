@@ -182,3 +182,27 @@ z = -35.59
 print(type(x))
 print(type(y))
 print(type(z))
+
+
+# type conversion
+print("type conversion................")
+# we can convert from one type to another with the int(), float().
+# Convert from one type to another.
+x = 1 # int
+y = 2.8 # float
+
+#convert from int to float:
+a = float(x)
+
+# convert from float to int:
+b = int(y)
+
+print(a)
+print(b)
+print(type(a))
+print(type(b))
+
+#Random number
+# Import the random module, and display a random number between 1 and9
+import random
+print(random.randrange(1,10))
