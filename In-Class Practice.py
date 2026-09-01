@@ -101,4 +101,37 @@ print(50 in dict)
 
 print("------&*-------")
 #
+data = [10,20,20,30,31,39]
+
+dict1 = {}
+for x in data:
+    if x in dict1:
+        dict1[x] =dict1[x] + 1 #{10:1, 20:1, 20:2, 30:1, 31:1,39:1}
+    else:
+        dict1[x] = 1
+print(dict1)
+
+
+# 08/31/2026 - Day 9
+# List
+list = [10,20,30,20,32,48]
+d = {}
+for x in list:
+    if x in d:
+        d[x] = d[x] + 1
+    else:
+        d[x] = 1
+print(d)
+
+print("------&*-------")
+print("------&*-max from the list------")
+# find the max from the list
+max = 0
+list = [10,20,30,20,32,48]
+d = {}
+for x in list:
+    if x > max:
+        max = x
+print(max)
+
 
