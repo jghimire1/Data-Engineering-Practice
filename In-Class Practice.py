@@ -134,4 +134,45 @@ for x in list:
         max = x
 print(max)
 
+print(" Define new list with negative value and print the biggest number")
+
+max = list[0]
+list = [-10,-20,-30,-20,-32,-48]
+for x in list:
+    if x > max:
+        max = x
+print(max)
+
+print(" min value ")
+max = list[0]
+list = [-10,-20,-30,-20,-32,-48]
+for x in list:
+    if x < max:
+        max = x
+print(max)
+
+print (" find the value which is max repeated")
+list = [10,20,30,20,30,30]
+d = {}
+for x in list:
+    if x in d:
+        d[x] = d[x] + 1
+    else:
+        d[x] = 1
+print(d)
+
+for key in d:
+    value = d[key]
+    print(key, value)
+
+print("max value of key")
+max = 0
+max_num = 0
+for key in d:
+    value = d[key]
+    if value > max:
+        max = value
+        max_num = key
+print(max, max_num)
+
 
