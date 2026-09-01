@@ -85,5 +85,20 @@ txt = "My name is Janardan, I am " + age
 print(txt)
 
 # But we can combine strings and numbers by using the format() method!
+# some values are false
+print("some values are false----------------------")
+# In fact, there are not many values that evaluate to False, except empty values, such as (), {},[], "",
+# the number o, and the value none. And of course, the value evaluates to False.
+# The following will return false:
+bool(False)
+bool(None)
+bool(0)
+bool("")
+bool(())
+bool([])
 
+#Numbers
+print("Numbers----------------")
+x = 1 # int
+y = 2.8 # float
 
