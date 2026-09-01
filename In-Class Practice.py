@@ -46,3 +46,59 @@ for x in data:
     if x % 2 == 1 and x < 20:
             print(x)
 print("-------------")
+# count the repeated values
+count = 0
+for x in data:
+    if x == 20:
+        count = count+1
+print(count)
+
+print("------&-------")
+# count the two value
+count = 0
+count1 = 0
+for x in data:
+    if x == 20 :
+        count = count+1
+        #print(count)
+    if x == 30:
+        count1 = count1+1
+print(count, count1)
+print(20, count, 30, count1)
+
+print("------&&&-------")
+
+# count the two value
+count = 0
+count1 = 0
+occurance = []
+for x in data:
+    if x == 20 :
+        count = count+1
+        occurance.append(count)
+        #print(count)
+    if x == 30:
+        count1 = count1+1
+        occurance.append(count1)
+print(count, count1)
+print(20, count, 30, count1)
+print(occurance)
+
+print("------&&&-------")
+dict = {}
+dict[20] = 1
+print(dict)
+dict[30] = 1
+print(dict)
+dict[20] = dict[20]+1
+print(dict)
+
+dict[30] = dict[30] + 1
+print(dict)
+
+print(20 in dict)
+print(50 in dict)
+
+print("------&*-------")
+#
+
