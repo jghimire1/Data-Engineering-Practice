@@ -102,3 +102,17 @@ print("Numbers----------------")
 x = 1 # int
 y = 2.8 # float
 
+
+print(myorder.format(quantity, itemno, price))
+
+print("******#******")
+
+# Boolean Values
+#In programming you often need to know if an expression is true or false
+#We can evaluate any expression in Python, and get one of two answers, True or False.
+# When we compare two values, the expression is evaluated and Python returns the boolean answer.
+print(10>9)
+print(10==9)
+print( 10 < 9)
+
+
