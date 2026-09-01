@@ -26,3 +26,19 @@ print(" Python Assignment operators-------------")
                         #  number of positions specified on the right. This effectively halves the number for each shift.
 # Left Shift --> <<= -->	x <<= 3 -->	    x = x << 3 # shifts the binary bits to the left, adding zeros on the
                                     # right. This effectively doubles the nuber for each shift.
+
+
+print("Python comparison Operators------------------")
+# Comparison Operators are used to compare two values
+
+# Operator	Name	Example
+# ==	Equal	x == y
+# !=	Not equal	x != y
+# >	Greater than	x > y
+# <	Less than	x < y
+# >=	Greater than or equal to	x >= y
+# <=	Less than or equal to	x <= y
+
+x = 5
+y = 3
+print(x==y)
