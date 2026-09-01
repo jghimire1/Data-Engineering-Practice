@@ -175,4 +175,60 @@ for key in d:
         max_num = key
 print(max, max_num)
 
+print(" character.........")
+line = "hello world hello nepal hello india"
+words = line.split(' ')
+print(words)
+
+print(" Most repeated words from the splitted list")
+words_dict = {}
+for x in words:
+    if x in words_dict:
+        words_dict[x] = words_dict[x] + 1
+    else:
+        words_dict[x] = 1
+print(words_dict)
+
+print()
+print(" Find most repeated word from the list. ")
+wd = ''
+wd_count = 0
+for key in words_dict:
+    value = words_dict[key]
+    if value > wd_count:
+        wd = key
+        wd_count = value
+print(wd, wd_count)
+
+print()
+print(" print number of vowels---------- ")
+count = 0
+vowel = ['a','e','i', 'o','u']
+input = "hello world"
+for ch in input:
+    #print(ch)
+    if ch in vowel:
+        count = count+1
+print(count)
+
+
+print()
+print("---Multiple list --------")
+list1 = ['a','b','c']
+list2 = [1,2,3]
+dict = {}
+#print (range(3))
+for i in range(len(list1)):
+    value1 = list1[i]
+    value2 = list2[i]
+    dict[value1] = value2
+print(dict)
+
+
+#my_range = range(5)
+
+#for i in my_range:
+   # print(i)
+
+
 
