@@ -27,3 +27,19 @@ for num in input_list:
          removed_duplicates.append(num)
 print(removed_duplicates)
 
+# Find the Intersection of Two Lists
+# Write a Python function to find the intersection of two lists.
+# Input: [1, 2, 3, 4], [3, 4, 5, 6]
+# Output: [3, 4]
+print(" Finding common elements of the two list...........")
+input_list1 = [1, 2, 3, 4]
+input_list2 = [3, 4, 5, 6]
+
+common_value = []
+
+for x in input_list1:
+    if x in input_list2 and x not in common_value:
+        common_value.append(x)
+print(common_value)
+
+
