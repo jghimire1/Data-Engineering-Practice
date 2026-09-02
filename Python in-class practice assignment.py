@@ -15,4 +15,15 @@ for num in input_list:
         max_value = num
 print(max_value,",", min_value)
 
+# remove duplicates from a list
+# Write a Python function to remove duplicates from a list while preserving the order.
+# Input: [1, 2, 2, 3, 4, 4, 5]
+# Output: [1, 2, 3, 4, 5]
+print(" Removing Duplicates ------------")
+input_list = [1, 2, 2, 3, 4, 4, 5]
+removed_duplicates = []
+for num in input_list:
+     if num not in removed_duplicates:
+         removed_duplicates.append(num)
+print(removed_duplicates)
 
