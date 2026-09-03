@@ -55,3 +55,20 @@ for x in input_list:
     else:
         flat_list.append(x)
 print(flat_list)
+
+#Merge Two Sorted Lists
+#Write a Python function to merge two sorted lists into a single sorted list.
+# Input: [1, 3, 5], [2, 4, 6]
+# Output: [1, 2, 3, 4, 5, 6]
+
+print("Using merged and sort ---------")
+
+input1 = [1,3,5]
+input2 = [2,4,6,]
+merged_list1 = input1 + input2
+
+
+merged_list1.sort()
+print(merged_list)
+ 
+ 
