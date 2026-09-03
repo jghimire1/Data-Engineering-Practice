@@ -42,4 +42,16 @@ for x in input_list1:
         common_value.append(x)
 print(common_value)
 
+# 09/02/2026 In class practice 
+#Flatten a Nested List
+#Write a Python function to flatten a nested list.
+input_list: [[1, 2], [3, 4], [5]]
+#Output: [1, 2, 3, 4, 5]
 
+flat_list = []
+for x in input_list:
+    if isinstance(x, list):
+        flat_list.extend(x) 
+    else:
+        flat_list.append(x)
+print(flat_list)
