@@ -70,5 +70,21 @@ merged_list1 = input1 + input2
 
 merged_list1.sort()
 print(merged_list)
- 
+
+#Find All Pairs in a List that Sum to a Specific Value
+#Write a Python function to find all pairs in a list that sum to a specific value.
+#Input: [1, 2, 3, 4, 5], Sum=6
+#Output: [(1, 5), (2, 4)]
+
+input_list4 = [1, 2, 3, 4, 5]
+target = 6
+pairs= []
+
+# looping through each element
+for i in range(len(input_list4)):
+    for j in range(i+1, len(input_list4)):
+        #looping through remaining elements to avoid duplicates and self pairing
+        if input_list4[i] + input_list4[j] == target:
+            pairs.append((input_list4[i], input_list4[j]))
+print(pairs)
  
