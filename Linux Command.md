@@ -80,5 +80,53 @@
            79  cd data 
            80  nano zipcodes.csv
            81  LS 
+           82  ls
+           83  hadoop fs -mkdir -p /user/test/data
+           84  ls
+           85  hadoop fs -ls /user/test/data
+           86  hadoop fs -put zipcodes.csv /user/test/data
+           87  hadoop fs -ls /user/test/data
+           88  cd data1
+           89  ls 
+           90  history 
+           91  clear
+           92  ls 
+           93  hadoop fs -get /user/test/data/zipcodes.csv .
+           94  ls 
+           95  cat zipcodes.csv
+           96  clear 
+           97  hadoop fs -cat user/test/data/zipcodes.csv
+           98  rm zipcodes.csv
+           99  ls 
+          100  rm data2
+          101  ls 
+          102  hadoop fs -rm /user/test/data/zipcodes.csv
+          103  hadoop fs -ls /user/test/data
+          104  hadoop fs -rm -r /user/test/data
+          105  ls 
+          106  cd ..
+          107  ls 
+          108  cat zipcodes.csv | head -n 2
+          109  cat zipcodes.csv | tail -n 2
+          110  hadoop fs -mkdir -p /user/test/data 
+          111  hadoop fs -put zipcodes.csv /user/test/data
+          112  hadoop fs -cat /user/test/data/zipcodes.csv | head -n 2
+          113  hadoop fs -cat /user/test/data/zipcodes.csv | tail -n 2
+          114  hadoop fs -du /user/test/data/zipcodes.csv
+          115  hadoop fs -mkdir /user/test/data1
+          116  hadoop fs -ls /user/test
+          117  hadoop fs -mv /user/test/data/zipcodes.csv /user/test/data1/
+          118  hadoop fs -ls /user/test/data
+          119  hadoop fs -ls /user/test/data1
+          120  ls 
+          121  cp zipcodes.csv zipcodes1.csv
+          122  ls 
+          123  hadoop fs -mkdir -p /user/test/data2
+          124  hadoop fs -moveFromLocal zipcodes1.csv /user/test/data2/
+          125  ls
+          126  hadoop fs -ls user/test/data2
+          127  hadoop fs -ls /user/test/data2
+          128  history
+
    
         
