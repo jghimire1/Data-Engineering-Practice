@@ -25,3 +25,27 @@ for x in char_str:
         count_result = x
         break
 print(count_result)
+
+print("Q3: Check if a string is a palindrome.-------------")
+string_pal = "madam"
+is_palindrome = ""
+
+for x in string_pal:
+    is_palindrome = x + is_palindrome
+
+is_palindrome = (string_pal == is_palindrome)
+print(is_palindrome)
+
+print("Q4:Count the frequency of each character in a string.")
+given_str = "hello"
+frequency = {}
+
+for x in given_str:
+    if x in frequency:
+        frequency[x] += 1
+    else:
+        frequency[x] = 1
+for x, frequency in frequency.items():
+    print(x,":",frequency, end =",")
+
+print()
