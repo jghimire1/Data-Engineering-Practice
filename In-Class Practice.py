@@ -100,7 +100,7 @@ print(20 in dict)
 print(50 in dict)
 
 print("------&*-------")
-#
+# Find the count of the elements from the list into the dictionary 
 data = [10,20,20,30,31,39]
 
 dict1 = {}
@@ -134,6 +134,7 @@ for x in list:
         max = x
 print(max)
 
+# Define new list with negative value and print the biggest number
 print(" Define new list with negative value and print the biggest number")
 
 max = list[0]
@@ -151,6 +152,7 @@ for x in list:
         max = x
 print(max)
 
+# find the value which is max repeated
 print (" find the value which is max repeated")
 list = [10,20,30,20,30,30]
 d = {}
@@ -165,6 +167,7 @@ for key in d:
     value = d[key]
     print(key, value)
 
+# max value of key
 print("max value of key")
 max = 0
 max_num = 0
