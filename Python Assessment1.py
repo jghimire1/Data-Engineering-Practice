@@ -98,3 +98,21 @@ for element in numbers:
     else:
         seen.append(element)
 print("Duplicates: ", duplicates)
+
+print("Q9: Rotate a list by K positions.")
+lst= [1,2,3,4,5]
+k = 2
+
+rotated_lst = lst[-k: ] + lst[: -k]
+print(rotated_lst)
+
+print("Q10: Find intersection of two lists.")
+lst1 = [1,2,3,4]
+lst2 = [3,4,5,6]
+
+intersection_value = []
+for n in lst1:
+    if n in lst2 and n not in intersection_value:
+        intersection_value.append(n)
+print("Intersection of two list is: ", intersection_value)
+
