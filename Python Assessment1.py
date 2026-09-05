@@ -127,3 +127,19 @@ for x in lst_given:
         dict[x] = 1
 print(dict)
 
+print("Q12: Find the key having maximum value.")
+
+dct = {"A":100,"B":500, "C":300}
+max_key = None
+max_value = None
+
+for key, value in dct.items():
+    if max_value is None:
+        max_key = key
+        max_value = value
+    else:
+        if value > max_value:
+            max_key = key
+            max_value = value
+print(max_key)
+
