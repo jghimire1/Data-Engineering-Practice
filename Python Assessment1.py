@@ -143,3 +143,17 @@ for key, value in dct.items():
             max_value = value
 print(max_key)
 
+print("Q13: Reverse a dictionary.")
+dict = {"a": 1, "b":2}
+reversed_dict = {}
+for key, value in dict.items():
+    reversed_dict[value] = key
+print(reversed_dict)
+
+print("Q14: Merge two dictionaries.")
+
+dict1= {"a": 1}
+dict2 = {"b": 2}
+
+merge_dict = dict1 | dict2
+print(merge_dict)
