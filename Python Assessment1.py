@@ -85,3 +85,16 @@ for num in number_list:
         if second_max is None or num > second_max:
             second_max = num
 print(second_max)
+
+print("Q8: Find all duplicate elements in a list.")
+numbers = [1,2,3,2,4,5,1]
+seen = []
+duplicates = []
+
+for element in numbers:
+    if element in seen:
+        if element not in duplicates:
+            duplicates.append(element)
+    else:
+        seen.append(element)
+print("Duplicates: ", duplicates)
