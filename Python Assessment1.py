@@ -296,3 +296,24 @@ for i in range(1, len(arr) + 2):
         missing = i
         break
 print(missing)
+
+print("Q25: find the top-occuring element in a list.")
+lst = [1,2,2,3,3,3,4]
+
+#counting occurance
+counts = {}
+for n in lst:
+    if n in counts:
+        counts[n] += 1
+    else:
+        counts[n] = 1
+
+#finding the element with the highest frequency.
+max_element = None
+max_count = 0
+
+for key, count in counts.items():
+    if count > max_count:
+        max_count = count
+        max_element = key
+print(max_element)
