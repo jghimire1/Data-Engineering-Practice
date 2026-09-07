@@ -157,3 +157,23 @@ dict2 = {"b": 2}
 
 merge_dict = dict1 | dict2
 print(merge_dict)
+
+print("Q14: Merge two dictionaries.")
+
+dict1= {"a": 1}
+dict2 = {"b": 2}
+
+merge_dict = dict1 | dict2
+print(merge_dict)
+
+print("Q15: Count word frequency in a sentence using dictionary.")
+sentence = "python is good python is easy" # input(" Enter your sentence to count word frequency: ")
+words = sentence.split()
+frequency = {}
+for word in words:
+    if word in frequency:
+        frequency[word] += 1
+    else:
+        frequency[word] = 1
+print(frequency)
+
