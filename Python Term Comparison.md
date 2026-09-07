@@ -10,7 +10,7 @@
       ▪	More prone to errors and unexpected changes. 
       ▪	Useful for a homogeneous collection of items that will grow, shrink, or change over the course of the program. 
       ▪	Example – my_list = [1,2,3]
-  o	Tuple 
+    o	Tuple 
       ▪	Represented by parentheses ()
       ▪	Immutable – fixed in size and its values 
       ▪	Use exact allocation of memory for the elements. 
