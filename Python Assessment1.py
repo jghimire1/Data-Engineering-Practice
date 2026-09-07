@@ -264,3 +264,35 @@ for n in nums:
             result = n
             break
 print(result)
+
+print("Q23: check whether two strings are anagrams.")
+str1 = "listen"
+str2 = "silent"
+if len(str1) != len(str2):
+    is_anagram = False
+else:
+    count1 = {}
+    count2 = {}
+
+    for char in str1:
+        if char in count1:
+            count1[char] += 1
+        else:
+            count1[char] = 1
+
+    for char in str2:
+        if char in count2:
+            count2[char] += 1
+        else:
+            count2[char] = 1
+    is_anagram = (count1 == count2)
+print(is_anagram)
+
+print("Q24: Find missing number from array.")
+arr = [1,2,3,5]
+missing = None
+for i in range(1, len(arr) + 2):
+    if i not in arr:
+        missing = i
+        break
+print(missing)
