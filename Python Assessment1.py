@@ -195,3 +195,29 @@ i = 1
 while i <= 10:
     print(num, "*" , i , "=" , num * i)
     i +=1
+
+print("Q18: Find factorial using for loop.")
+
+n = 5
+factorial = 1
+for i in range (1, n+1):
+    factorial *= i
+print(factorial)
+
+print("Q19: Find all prime numbers between 1 and 100.")
+prime_num = []
+for num in range(2, 101):
+    for i in range(2, num):
+        if num % i == 0:
+            break
+    else:
+        prime_num.append(num)
+print(prime_num)
+
+print("Q20: Generate the Fibonacci series up N terms.")
+n = 8
+a = 0
+b = 1
+for _ in range(n):
+    a,b = b, a+b
+    print(a, end=" ")
