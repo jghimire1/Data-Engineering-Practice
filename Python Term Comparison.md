@@ -80,5 +80,18 @@
 
   ## Append () vs extend ()
   
+    o	Append ()
+        ▪	Adds its argument as a single element to the end of the list, regardless of whether that argument is a number, a string, or another list.
+        ▪	 Has an argument of any single object
+        ▪	Appends the arguments as one element. 
+        ▪	Always increases by 1. 
+        ▪	Creates nested lists. 
+        ▪	Example – list.append(x)
+    o	Extend ()
+        ▪	Iterates over its argument (an iterable like a list, tuple, or string) and appends each element individually to the end.
+        ▪	Unpacks the argument and appends each element. 
+        ▪	Increases by the length of the iterable 
+        ▪	Merges/flattens the elements into the main list. 
+        ▪	Example – list.extend(iterable)
 
 
