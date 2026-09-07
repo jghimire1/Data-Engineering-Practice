@@ -64,3 +64,21 @@
         ▪	Slower (O(n) recursive traversal)
         ▪	Use when working with nested data structures. Like matrices, API JSON payloads with dictionaries inside lists, or complex class instances) and you must guarantee total isolation from mutations.
 
+## is vs ==
+    o	IS 
+        ▪	It is an identity operator that compares the memory address
+        ●	checks for object identity (whether two variables point to the exact same spot in computer memory.
+        ▪	It identifies whether these two variables point to the exact same object in RAM.
+        ▪	Checks against singletons like None, True, or False. 
+        ▪	Use whenever exclusively checking for None, True, or False. 
+    o	==
+      ▪	It is an equality operator that compares the contents of the objects. 
+      ▪	Identifies whether these two things look the same.
+      ●	Checks for value equality (whether two variables hold the same data
+      ▪	Compares numbers, strings, lists, etc. 
+      ▪	Use whenever we want to know if two variables contain the same text, number, list items, or dictionary data. 
+
+  ## Append () vs extend ()
+  
+
+
