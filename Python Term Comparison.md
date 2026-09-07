@@ -20,4 +20,32 @@
       ▪	Useful when data integrity protection is needed to prevent accidental modification. 
       ▪	Example – my_tuple = (a,b,c)
 
-      
+## Dictionary vs Set
+  	o Dictionary
+      ▪	Stores key-value pairs 
+      ▪	Indexing by key
+      ▪	Key must be unique 
+      ▪	Keys must be hashable and immutable 
+      ▪	Does not support union or intersection directly 
+      ▪	Represented by curly brackets {}
+      ▪	For example d = {}
+      ▪	Useful when you need to map relationships, to retrieve or update values based on the identifier (key)
+      ▪	Use dictionary when:
+      ●	Need to associate values with keys
+      ●	Counting occurances
+      ●	Mapping one thing to another 
+      ●	Storing metadata with items 
+    o	Set
+      ▪	Set stores unique, standalone elements, no duplicates. 
+      ▪	No indexing; must iterate or check in 
+      ▪	All elements must be unique 
+      ▪	Elements must be hashable and immutable 
+      ▪	Supports (|, &, -, ^) 
+      ▪	For example: s = set(); must use set constructor 
+      ▪	Useful when 
+      ●	Need to eliminate duplicates from a collection.
+      ●	Need mathematical operations like intersections, union, and differences
+      ●	Fast order of operations to check elements 
+      ●	Need to track membership 
+      ●	Order doesn’t matter 
+       
