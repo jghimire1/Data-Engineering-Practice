@@ -48,4 +48,19 @@
       ●	Fast order of operations to check elements 
       ●	Need to track membership 
       ●	Order doesn’t matter 
-       
+
+  ## ●	Shallow Copy vs Deep Copy
+    o	The core difference is how they handle nested (compound) objects. 
+    o	Shallow Copy
+        ▪	A shallow copy creates a new outer collection but leaves nested objects linked by reference 
+        ▪	Nested objects are shared by reference
+        ●	The outer list is a new container, but the nested list points to the same memory address. 
+        ▪	Fast (O(n) outer elements only)
+        ▪	Use when dealing with flat collections ((lists/dictionary of integers, strings, floats, Booleans) where no nested mutable structures exist.
+    o	Deep copy
+        ▪	Recursively clones both the outer collection and every object inside it.
+        ●	Constructs a brand-new outer container and recursively copies every object nested inside.
+        ▪	Nested objects are cloned independently 
+        ▪	Slower (O(n) recursive traversal)
+        ▪	Use when working with nested data structures. Like matrices, API JSON payloads with dictionaries inside lists, or complex class instances) and you must guarantee total isolation from mutations.
+
