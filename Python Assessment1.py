@@ -177,3 +177,21 @@ for word in words:
         frequency[word] = 1
 print(frequency)
 
+print("Q16: Print the following pattern.")
+
+rows = 1
+for i in range (1, rows + 1):
+
+    circle = "●"
+    spaces = " "
+    stars = "*"
+
+    print(circle + spaces * 4 + stars* (i * 2))
+
+print("Q17: Print multiplication table of a given number.")
+
+num = 5
+i = 1
+while i <= 10:
+    print(num, "*" , i , "=" , num * i)
+    i +=1
