@@ -19,3 +19,5 @@
       ▪	Useful when data is fixed and structured and does not need to be changed in the future. 
       ▪	Useful when data integrity protection is needed to prevent accidental modification. 
       ▪	Example – my_tuple = (a,b,c)
+
+      
