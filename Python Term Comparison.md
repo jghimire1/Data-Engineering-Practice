@@ -1,6 +1,6 @@
 
-#Explain the difference between:
-  ●	List vs Tuple
+# Explain the difference between:
+  ## List vs Tuple
     o List:
       ▪	Represented by square brackets []
       ▪	Mutable – can add, remove, and change its elements. 
