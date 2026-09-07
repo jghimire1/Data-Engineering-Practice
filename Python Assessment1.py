@@ -221,3 +221,46 @@ b = 1
 for _ in range(n):
     a,b = b, a+b
     print(a, end=" ")
+
+print()
+print("Q21: Find non repeating number in a list.")
+nums = [1,2,3,4,5,1,2,3]
+
+#counting each element in the list
+count= {}
+for n in nums:
+    if n in count:
+        count[n] += 1
+    else:
+        count[n] = 1
+
+# find first number with a count of 1
+result = None
+for n in nums:
+    if count[n] == 1:
+        result = n
+        break
+print(result)
+
+print("Q22: Find Nth non-repeating number in list. ")
+nums = [1,2,3,4,5,1,2,3]
+NTH = 2
+
+#counting each element in the list
+count= {}
+for n in nums:
+    if n in count:
+        count[n] += 1
+    else:
+        count[n] = 1
+
+# find first number with a count of 1
+result = None
+found_count = 0
+for n in nums:
+    if count[n] == 1:
+        found_count += 1
+        if found_count == NTH:
+            result = n
+            break
+print(result)
