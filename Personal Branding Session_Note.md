@@ -29,7 +29,21 @@
         o	Differentiators 
         o	Experience 
         o	Example:
-        	Data engineer, specialized AWS-based streaming analytics. 
+            	Data engineer, specialized AWS-based streaming analytics. 
         o	UVP shapes your narrative 
         o	Integrate UVP in LinkedIn headlines, resumes, interviews 
+    •	Researching your Niche & Audience 
+        o	Identify target industries & roles 
+        o	Find what these employers seek (Tools, Languages, soft skills) 
+        o	Tailor brands to industry needs 
+        o	Focus messaging on what your audience cares about. 
+    •	Crafting a strong professional summary 
+        o	LinkedIn about section with quantifiable achievements
+        o	Good summary doubles recruiter messages (6 – 12 months) 
+        o	Pro headshot = +25% connection requests 
+        o	Professional photo
+        o	Banner (background) 
+        o	Detailed experience
+        o	Recommendation 
+
 
