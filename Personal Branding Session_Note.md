@@ -24,3 +24,12 @@
         	180 days streaks 
         	10+ innovative repos 
     o	Personal portfolio website (10%) 
+    •	Defining Your Unique Value Proposition (UVP) 
+        o	SKILLS 
+        o	Differentiators 
+        o	Experience 
+        o	Example:
+        	Data engineer, specialized AWS-based streaming analytics. 
+        o	UVP shapes your narrative 
+        o	Integrate UVP in LinkedIn headlines, resumes, interviews 
+
