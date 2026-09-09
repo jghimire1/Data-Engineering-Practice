@@ -71,6 +71,22 @@ merged_list1 = input1 + input2
 merged_list1.sort()
 print(merged_list)
 
+print("---------optimal and two pointer approach-----")
+merged = []
+i = 0
+j = 0
+
+# comparing elements from both lists using two pointers
+while i < len(input1) and j < len(input2):
+    if input1[i] <= input2[j]:
+        merged.append(input1[i])
+        i += 1
+    else:
+        merged.append(input2[j])
+        j += 1
+
+
+
 #Find All Pairs in a List that Sum to a Specific Value
 #Write a Python function to find all pairs in a list that sum to a specific value.
 #Input: [1, 2, 3, 4, 5], Sum=6
