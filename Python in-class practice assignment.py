@@ -85,7 +85,17 @@ while i < len(input1) and j < len(input2):
         merged.append(input2[j])
         j += 1
 
+# append any remaining elements from input1 list
+while i < len(input1):
+    merged.append(input1[i])
+    i += 1
 
+# append any remaining elements from input2 list
+while j < len(input1):
+    merged.append(input2[j])
+    j += 1
+
+print(merged)
 
 #Find All Pairs in a List that Sum to a Specific Value
 #Write a Python function to find all pairs in a list that sum to a specific value.
