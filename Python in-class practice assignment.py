@@ -113,4 +113,34 @@ for i in range(len(input_list4)):
         if input_list4[i] + input_list4[j] == target:
             pairs.append((input_list4[i], input_list4[j]))
 print(pairs)
+
+
+# Check for Anagrams
+# Write a Python function to check if two given strings are anagrams of each other.
+# Input: "listen", "silent"
+# Output: True
+
+str1 = "Listen"
+str2 = "silent"
+
+if len(str1) != len(str2):
+    is_anagram = False
+else:
+    count1 = {}
+    count2 = {}
+
+    for char in str1:
+        if char in count1:
+            count1[char] += 1
+        else:
+            count1[char] = 1
+
+    for char in str2:
+        if char in count2:
+            count2[char] += 1
+        else:
+            count1[char] = 1
+    is_anagram = (count1 == count2)
+print(is_anagram)
+
  
