@@ -31,5 +31,19 @@
     use default;
     show tables;
     select * from partition_date;
-create database xyz;
-
+    create database xyz;
+    use xyz;
+    create external table customer(id int, name string, dob date, time1 timestamp) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LOCATION '/data/test/text';
+    show tables;
+    select * from customer;
+    drop table customer;
+    show table; 
+    show tables;
+    create external table customer(id int, name string, dob date, time1 timestamp) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LOCATION '/data/test/text';
+    show tables;
+    create table emp(empId int, empName string, doi date);
+    insert into emp values(1,'vishal','2009-01-01');
+    select * from emp;
+    drop table emp;
+    show tables;
+    
