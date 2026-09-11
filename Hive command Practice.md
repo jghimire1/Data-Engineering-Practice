@@ -46,4 +46,20 @@
     select * from emp;
     drop table emp;
     show tables;
-    
+    create table emp(empId int, empName string, doj date);
+    insert into emp values(1,'vishal','2009-01-01');
+    show tables;
+    describe customer;
+    create emp1(empId int, empName String, doj date);
+    create table  emp1(empId int, empName String, doj date);
+    show tables;
+    insert overwrite table emp1 select * from emp; 
+    select * from  emp1;
+    insert into table emp1 select * from emp ;
+    select * from  emp1;
+    insert overwrite table emp1 select * from emp; 
+    select * from  emp1;
+    CREATE TABLE non_partitioned_date1(column1 string, day string,event string);
+    insert into non_partitioned_date1 values('abc', '2000-01-01','e1') , ('abc', '2000-01-02','e1'), ('abc', '1999-12-20','e1') ,('abc', '2000-01-01','e1');
+    select * from non_partitioned_date1;
+
