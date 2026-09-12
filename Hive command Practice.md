@@ -87,6 +87,23 @@
     STORED AS TEXTFILE;
     
     load data local inpath 'realstatewh.csv' into table input_table;
+    
+    SET hive.enforce.bucketing = true;
+    set hive.exec.dynamic.partition.mode=nonstrict;
+    
+    
+    create table bucket_table(Street string,
+    Zip string,
+    State string,
+    Beds string,
+    Baths string,
+    Sq_feet int,
+    flat_type string,
+    Price int) partitioned by(city string) clustered by (street) into 4 buckets ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+    
+    insert into table bucket_table partition(city) select street,zip,state,beds,baths,sq_feet,flat_type,price,city from input_table;
+    
+        
 
     
 
