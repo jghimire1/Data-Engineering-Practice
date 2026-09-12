@@ -73,4 +73,21 @@
     show partitions partition_date_1;
     alter table partition_date DROP PARTITION (day = '2000-01-01', event = 'e1');
     show partitions partition_date;
+
+# create bucket in hive 
+    create table input_table (Street string,
+    City string,
+    Zip string,
+    State string,
+    Beds string,
+    Baths string,
+    Sq_feet int,
+    flat_type string,
+    Price int) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
+    STORED AS TEXTFILE;
+    
+    load data local inpath 'realstatewh.csv' into table input_table;
+
+    
+
     
