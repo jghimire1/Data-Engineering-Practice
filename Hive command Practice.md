@@ -102,6 +102,13 @@
     Price int) partitioned by(city string) clustered by (street) into 4 buckets ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
     
     insert into table bucket_table partition(city) select street,zip,state,beds,baths,sq_feet,flat_type,price,city from input_table;
+
+    ## To get the create table command 
+    show create table input_table; 
+
+    ## describe the table 
+    describe formatted input_table; 
+    
     
         
 
