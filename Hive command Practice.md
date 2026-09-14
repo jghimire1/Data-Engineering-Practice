@@ -108,6 +108,9 @@
 
     ## describe the table 
     describe formatted input_table; 
+
+    ## list all partitions 
+    show partitions bucket_table;
     
     
         
