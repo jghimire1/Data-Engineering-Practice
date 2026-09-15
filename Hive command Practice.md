@@ -111,7 +111,13 @@
 
     ## list all partitions 
     show partitions bucket_table;
-    
+
+## Parquet file benefits:
+    Reduce the file size 
+    Reduce the data scan 
+    Filter predicate pushdown 
+    Faster data reading from Parquet 
+
     
         
 
