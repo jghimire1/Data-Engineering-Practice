@@ -118,6 +118,27 @@
     Filter predicate pushdown 
     Faster data reading from Parquet 
 
+# Hive Complex Command
+    1.	Create Database named complex and change your database.
+
+        create database complex;
+        use complex;
+
+    2.	Create file name arrayfile with given data
+
+        1,abc,40000,a$b$c,hyd
+        2,def,3000,d$f,bang
+
+
+        touch arrayfile
+        nano arrayfile
+
+
+        copy above 2 lines and paste
+        clt +s
+        clt +x
+
+
     
         
 
