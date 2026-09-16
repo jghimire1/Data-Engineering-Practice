@@ -164,7 +164,21 @@
     load data local inpath 'mapfile' overwrite into table tab10;
     load data local inpath 'mapfile1' overwrite into table tab10;
     select dud["pf"] from tab10;
-    select dud["pf"],dud["epf"] from tab10;
+    select dud["pf"],dud["epf"] from tab10; 
+
+    Create file structfile
+    Copy below data into file
+
+    nano structfile
+
+    1,abc,40000,a$b$c,pf#500$epf#200,hyd$ap$500001
+    2,def,3000,d$f,pf#500,bang$kar$600038 
+
+    create table emp (empid int,empname string,empsal bigint,sub array<string>,dud map<string,int>,addr struct<city:string,state:string,pin:bigint>) row format delimited fields terminated by ',' collection items terminated by '$' map keys terminated by '#';
+    load data inpath '/data/structfile' into table emp; (loading from hdfs location) 
+    select addr.city from emp;
+
+
 
 
     
