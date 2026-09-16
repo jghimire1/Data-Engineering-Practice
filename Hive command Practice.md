@@ -152,6 +152,14 @@
 
     select sub[0] from tab7;
 
+    Create a map file and Table
+    Create a file named mapfile and copy the data below into it.
+
+    1,abc,40000,a$b$c,pf#500$epf#200$jf#200,hyd
+    2,def,3000,d$f,pf#500,bang
+
+    
+
     
 
     
