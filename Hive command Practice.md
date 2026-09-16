@@ -158,6 +158,15 @@
     1,abc,40000,a$b$c,pf#500$epf#200$jf#200,hyd
     2,def,3000,d$f,pf#500,bang
 
+    create table tab10(id int,name string,sal bigint,sub array<string>,dud map<string,int>,city string)
+    row format delimited fields terminated by ',' collection items terminated by '$' map keys terminated by '#';
+
+    load data local inpath 'mapfile' overwrite into table tab10;
+    load data local inpath 'mapfile1' overwrite into table tab10;
+    select dud["pf"] from tab10;
+    select dud["pf"],dud["epf"] from tab10;
+
+
     
 
     
