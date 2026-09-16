@@ -138,6 +138,16 @@
         clt +s
         clt +x
 
+    -- create Array Table in hive 
+    
+    create table tab7 (id int,name string,sal bigint,sub array<string>,city string)
+    row format delimited fields terminated by ','  collection items terminated by '$'; 
+
+    3. Load data into Hive table from file 
+    load data local inpath 'arrayfile' overwrite into table tab7; 
+    
+
+    
 
     
         
