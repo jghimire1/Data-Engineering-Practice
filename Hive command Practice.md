@@ -145,6 +145,13 @@
 
     3. Load data into Hive table from file 
     load data local inpath 'arrayfile' overwrite into table tab7; 
+
+    Access the elements from the array 
+    
+    select sub[2] from tab7 where id=1;
+
+    select sub[0] from tab7;
+
     
 
     
