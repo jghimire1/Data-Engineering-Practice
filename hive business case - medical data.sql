@@ -29,3 +29,8 @@ load data local inpath 'medical_visit.csv' into table input_medical_visit;
 create table medical_visit (visit_id INT,  patient_id INT, diagnosis STRING, treatment STRING) 
 partitioned by  (visit_date DATE, region STRING) clustered by (diagnosis, patient_id ) into 10 buckets 
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' ;
+
+-- loading data into medical visit bucketed table 
+insert into medical_visit PARTITION (visit_date, region) SELECT visit_id, patient_id, diagnosis, treatment , visit_date, region from input_medical_visit;
+
+
