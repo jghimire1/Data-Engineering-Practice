@@ -12,3 +12,11 @@ insert into input_medical_visit VALUES
 
 
 
+-- Creating partition table for medical visit 
+create table input_medical_visit (visit_id INT, patient_id INT, diagnosis STRING, treatment STRING) 
+partitioned by  (visit_date DATE, region STRING) ;
+
+
+-- creating non bucketed table  
+create table input_medical_visit (visit_id INT, patient_id INT, region STRING, visit_date DATE, diagnosis STRING, 
+treatment STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE; 
