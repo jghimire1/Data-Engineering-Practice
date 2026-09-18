@@ -118,7 +118,7 @@ Partitioning and bucketing in Hive improve query performance by optimizing data 
 */
 
 
-
+-- Solution SQL Statements
 
 -- creating input table for medical visists table 
 
