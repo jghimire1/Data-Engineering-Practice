@@ -33,3 +33,10 @@
 70012,250.45,2012-06-27,3008,5002
 70011,75.29,2012-08-17,3003,5007
 70013,3045.6,2012-04-25,3002,5001
+
+-- creating database hive_test 
+create database hive_test; 
+
+-- creating salesman table 
+create table salesman (salesman_id INT, name STRING, city STRING, Commission DOUBLE); 
+
