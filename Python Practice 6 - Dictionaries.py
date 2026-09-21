@@ -25,3 +25,48 @@ this_dict = {
 }
 x = this_dict["model"]
 print(x)
+
+
+# Get the keys
+# the keys() method will return a list of all the keys in the dictionary.
+print("Add a new item to the original dictionary, and see that the keys lists gets updated as well.")
+car = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year" : 1964
+    }
+x = car.keys()
+
+print(x) # before change
+car["color"] = "white"
+
+print(x) # after the change
+
+print("Get a list of values:")
+x = this_dict.values()
+print(x)
+
+print("Make a change in the original dictionary, and see that the values list gets updated as well.")
+car = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+x = car.values()
+print(x) # before change
+
+car["year"] = 2020
+print(x) # after change
+
+print("Get a list of the key: value pairs.")
+x = this_dict.items()
+print(x)
+
+print("check if model is present in the dictionary.")
+this_dict = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+if "model" in this_dict:
+    print("Yes, 'model' is one of the keys in the this_dict dictionary.")
