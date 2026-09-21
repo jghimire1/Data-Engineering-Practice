@@ -113,3 +113,24 @@ print("We can also use the values() method to return values of a dictionary.")
 for x in car.values():
     print(x)
 
+#Keys()
+print("We can also use the keys() method to return the keys of a dictionary.")
+for x in car.keys():
+    print(x)
+
+#Looping through both keys and values
+print("Loop through both keys and values, by using the items() method.")
+
+for x, y in car.items():
+    print(x,y)
+
+# copying the dictionary to new dictionary - copy()
+print("Make a copy of a dictionary with the copy() method.")
+this_dict1 = {
+    "brand" : "Ford",
+    "model" : "Mustang",
+    "year" : 1964
+}
+my_dict = this_dict1.copy()
+print(my_dict)
+
