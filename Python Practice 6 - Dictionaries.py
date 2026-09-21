@@ -70,3 +70,30 @@ this_dict = {
 }
 if "model" in this_dict:
     print("Yes, 'model' is one of the keys in the this_dict dictionary.")
+
+# The pop()
+print("The pop() method removes the item with the specified key name.")
+this_dict = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+this_dict.pop("model")
+print(this_dict)
+
+# delete
+print("The del keyword can also delete the dictionary completely.")
+del this_dict
+#print(this_dict)
+
+# clear() method
+print("The clear() method empties the dictionary.")
+this_dict2 = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 1964
+}
+this_dict2.clear()
+print(this_dict2)
+this_dict2["color"] = "Red" # adding key value pair after clear
+print(this_dict2)
