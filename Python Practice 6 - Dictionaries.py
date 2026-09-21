@@ -97,3 +97,19 @@ this_dict2.clear()
 print(this_dict2)
 this_dict2["color"] = "Red" # adding key value pair after clear
 print(this_dict2)
+
+# print all keys
+print("Print all keys names in the dictionary, one by one.")
+for x in car:
+    print(x)
+
+# print all values of the dictionary
+print("print all values in the dictionary, one by one.")
+for x in car:
+    print(car[x])
+
+# values()
+print("We can also use the values() method to return values of a dictionary.")
+for x in car.values():
+    print(x)
+
