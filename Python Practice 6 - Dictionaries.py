@@ -134,3 +134,13 @@ this_dict1 = {
 my_dict = this_dict1.copy()
 print(my_dict)
 
+# Making copy of dictionary using dict()
+print("Make a copy of a dictionary with the dict() function.")
+this_dict= {
+    "brand" : "Honda",
+    "model" : "Slick",
+    "year" : 1964
+    }
+my_dict = dict(this_dict)
+print(my_dict)
+
