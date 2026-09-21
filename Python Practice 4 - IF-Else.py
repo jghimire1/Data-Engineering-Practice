@@ -54,3 +54,12 @@ b = 33
 c = 500
 if a > b or a > c:
     print("At least one of the conditions is True.")
+
+print("Not----------------")
+# The not keyword is logical operator, and is used to reverse
+# the result of the conditional statement:
+
+a = 33
+b = 200
+if not a > b:
+    print("a is NOT greater than b.")
