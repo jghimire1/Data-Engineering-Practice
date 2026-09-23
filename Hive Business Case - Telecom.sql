@@ -34,3 +34,17 @@ nano call_data.csv
 
 -- loading the data from the local file to non-bucketed table in hive 
 load data local inpath  'call_data.csv' into table nbct_call_data; 
+
+- creating partitioned and bucketed table 
+
+create table call_data (
+call_id INT, 
+customer_id INT, 
+call_duration FLOAT 
+) partitioned by  (call_date DATE, region STRING) clustered by (customer_id) into 4 buckets 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ","; 
+
+-- Loading data from the non-bucketed nbct_data_call table into bucketed call_data table. 
+
+insert into call_data PARTITION (call_date, region) SELECT call_id, customer_id, call_duration, call_date, region from nbct_call_data; 
+
