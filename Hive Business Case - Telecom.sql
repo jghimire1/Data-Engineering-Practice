@@ -21,3 +21,16 @@ customer_id INT,
 call_duration FLOAT, 
 region STRING, 
 call_date DATE) ROW FORMAT DELIMITED FIELDS TERMINATED BY "," stored as TEXTFILE ;
+
+-- Create the sample data file in local path 
+nano call_data.csv 
+-- sample data 
+1,101,15.5,North,2023-08-01
+2,102,20.2,South,2023-08-02
+3,103,5.7,East,2023-08-03
+4,104,12.4,West,2023-08-04
+5,105,25.0,North,2023-08-05
+
+
+-- loading the data from the local file to non-bucketed table in hive 
+load data local inpath  'call_data.csv' into table nbct_call_data; 
