@@ -23,7 +23,16 @@ def get_distinct_rows(spark):
     print("Distinct count: " + str(distinctDF.count()))
     distinctDF.show(truncate=False)
 
-  
+   # dropping duplicates
+    df2 = df.dropDuplicates()
+    print("Distinct count after using drop duplicates: " + str(df2.count()))
+    df2.show(truncate=False)
+
+    # Distinct of selected multiple columns
+    dropDisDF = df.dropDuplicates(["department", "salary"])
+    print("Distinct count of department & salary: "+str(dropDisDF.count()))
+    dropDisDF.show(truncate = False)
+
 
 
  
