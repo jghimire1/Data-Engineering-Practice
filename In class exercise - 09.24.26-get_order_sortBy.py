@@ -18,6 +18,14 @@ def sort_orderBy_Function(spark):
     df = spark.createDataFrame(data=simpleData, schema=columns)
     #df.printSchema()
     #df.show(truncate=False)
+ # DataFrame sorting using the sort() function
+    print("Sorting department and state by using sort() function: ")
+    df.sort("department", "state").show(truncate=False)
 
+    # Sorting using orderBy() function
+    print("Sorting department and state by using orderBy() function:")
+    df.orderBy("department", "state").show(truncate= False)
+
+  
    
  
