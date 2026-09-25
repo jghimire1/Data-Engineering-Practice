@@ -33,6 +33,11 @@ def sort_orderBy_Function(spark):
     print("Sorting department and salary using orderBy() function in ascending order:")
     df.orderBy(df.department.asc(), df.salary.asc()).show(truncate = False)
 
+    print("Sorting department and state using sort() function in descending order:")
+    df.sort(df.department.desc(), df.state.desc()).show(truncate=False)
+
+    print("Sorting department and state using orderBy() function in descending order:")
+    df.orderBy(col("department").desc(), col("state").desc()).show(truncate=False)
 
    
  
