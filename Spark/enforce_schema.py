@@ -11,4 +11,16 @@ def enforce_schema(spark):
             ("Jen", "Mary", "Brown", "", "F", -1)
             ]
 
+    schema = StructType([ \
+    StructField("firstname", StringType(), True), \
+    StructField("middlename", StringType(), True), \
+    StructField("lastname", StringType(), True), \
+    StructField("id", StringType(), True), \
+    StructField("gender", StringType(), True), \
+    StructField("salary", IntegerType(), True) \
+    ])
+
+df = spark.createDataFrame(data=data, schema=schema)
+df.printSchema()
+df.show()
 
