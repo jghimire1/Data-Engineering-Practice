@@ -1,1 +1,48 @@
 
+from os import truncate
+
+from pyspark.sql.functions import col
+
+
+def sort_orderBy_Function(spark):
+    simpleData = [("James", "Sales", "NY", 90000, 34, 10000), \
+                  ("Michael", "Sales", "NY", 86000, 56, 20000), \
+                  ("Robert", "Sales", "CA", 81000, 30, 23000), \
+                  ("Maria", "Finance", "CA", 90000, 24, 23000), \
+                  ("Raman", "Finance", "CA", 99000, 40, 24000), \
+                  ("Scott", "Finance", "NY", 83000, 36, 19000), \
+                  ("Jen", "Finance", "NY", 79000, 53, 15000), \
+                  ("Jeff", "Marketing", "CA", 80000, 25, 18000), \
+                  ("Kumar", "Marketing", "NY", 91000, 50, 21000) \
+                  ]
+    columns = ["employee_name", "department", "state", "salary", "age", "bonus"]
+    df = spark.createDataFrame(data=simpleData, schema=columns)
+    #df.printSchema()
+    #df.show(truncate=False)
+
+    # DataFrame sorting using the sort() function
+    print("Sorting department and state by using sort() function: ")
+    df.sort("department", "state").show(truncate=False)
+
+    # Sorting using orderBy() function
+    print("Sorting department and state by using orderBy() function:")
+    df.orderBy("department", "state").show(truncate= False)
+
+    # sorting using Ascending order
+    print("Sorting department and state in ascending order:")
+    df.sort(df.department.asc(), df.state.asc()).show(truncate=False)
+
+    print("Sorting department and salary using orderBy() function in ascending order:")
+    df.orderBy(df.department.asc(), df.salary.asc()).show(truncate = False)
+
+    print("Sorting department and state using sort() function in descending order:")
+    df.sort(df.department.desc(), df.state.desc()).show(truncate=False)
+
+    print("Sorting department and state using orderBy() function in descending order:")
+    df.orderBy(col("department").desc(), col("state").desc()).show(truncate=False)
+
+
+
+
+
+
