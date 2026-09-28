@@ -62,4 +62,22 @@ def filter_method(spark):
     lst = ["OH","CA","DE"]
     df.filter(df.state.isin(lst)).show()
 
+ # Filter NOT IS IN list Values
+    # These show all records with NY (NY is not part of the list)
+    print("Filtering using NOT IS IN list values")
+    df.filter(~df.state.isin(lst)).show()
+    df.filter(df.state.isin(lst) == False).show()
+
+    # Filter based on Starts With, Ends With, Contains
+    print("Using starts with filtering")
+    df.filter(df.state.startswith("N")).show()
+
+    print("Using endswith filtering")
+    df.filter(df.state.endswith("H")).show()
+
+    print("Using Contains filtering")
+    df.filter(df.state.contains("H")).show()
+
+   
+
    
