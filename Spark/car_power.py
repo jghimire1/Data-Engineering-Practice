@@ -12,3 +12,17 @@ def car_power_method(spark):
     df.show(truncate = False)
 
     # modifying the default long data type to integer
+    print("Modifying the horsepower and weight columns' data type.")
+    df1 = df.withColumn("horsepower", col("horsepower").cast("integer"))
+    df2 = df1.withColumn("weight", col("weight").cast("integer"))
+
+    df2.show()
+    df2.printSchema()
+
+    # adding AvgWeight column
+    df3 = df2.withColumn("AvgWeight", lit("200"))
+    df3.show(truncate = False)
+
+    # Adding kilowatt_power column
+    df4 = df3.withColumn("kilowatt_power", col("horsepower")*1000)
+    df4.show(truncate = False)
