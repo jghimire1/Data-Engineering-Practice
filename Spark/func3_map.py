@@ -28,6 +28,27 @@ def mapped(spark):
     rdd4.collect()
     print(rdd4)
 
+     # By Calling function
+    def func1(x):
+        firstName = x.firstname
+        lastName = x.lastname
+        name = firstName + "," + lastName
+        gender = x.gender.lower()
+        salary = x.salary * 2
+        return (name, gender, salary)
+
+    rdd2 = df.rdd.map(lambda x: func1(x))
+    rdd2.collect()
+
+    # Foreach example
+    def f(x): print(x)
+
+    df.foreach(f)
+
+    # Another example
+    df.foreach(lambda x:
+               print("Data ==>" + x["firstname"] + "," + x["lastname"] + "," + x["gender"] + "," + str(x["salary"] * 2))
+               )
    
 
 
