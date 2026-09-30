@@ -26,3 +26,9 @@ def car_power_method(spark):
     # Adding kilowatt_power column
     df4 = df3.withColumn("kilowatt_power", col("horsepower")*1000)
     df4.show(truncate = False)
+    # renaming the column
+    df5 = df4.withColumnRenamed("carr", "car")
+    df5.show(truncate = False)
+
+    #checking data type of the final data frame
+    df5.printSchema()
