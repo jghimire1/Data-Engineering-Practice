@@ -36,6 +36,18 @@ def arraytype_column(spark):
     print("using the splitting function --split()-- ")
     df.select(split(df.name,",").alias("nameAsArray")).show()
 
+  # array()
+    # Use array() function to create a new array column by merging the data from
+    # multiple columns. All input columns must have the same data type. The below
+    # example combines the data from currentState and previousState and creates a new column states.
+    print("Array combined the data from current state and previous state and creating the states column.")
+    df.select(df.name, array(df.currentState, df.previousState).alias("States")).show()
+
+    # array_contains()
+    # array_contains() sql function is used to check if array column contains a value.
+    # Returns null if the array is null, true if the array contains the value, and false otherwise.
+    print("Printing data using array_contains---")
+    df.select(df.name, array_contains(df.languagesAtSchool, "Java").alias("array_contains")).show()
   
 
 
