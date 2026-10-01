@@ -27,14 +27,35 @@ def map_type_method(spark):
     df.printSchema()
     df.show(truncate=False)
 
-    
+    #Pyspark maptype elements
+    df3 = df.rdd.map(lambda x: \
+                         (x.name, x.properties["hair"], x.properties["eye"])) \
+        .toDF(["name", "hair", "eye"])
+    df3.printSchema()
+    print("pyspark maptype elements......")
+    df3.show()
 
+    df.withColumn("hair", df.properties.getItem("hair")) \
+        .withColumn("eye", df.properties.getItem("eye")) \
+        .drop("properties") \
+        .show()
 
+    df.withColumn("hair", df.properties["hair"]) \
+        .withColumn("eye", df.properties["eye"]) \
+        .drop("properties") \
+        .show()
 
+    # explode functions
+    df.select(df.name, explode(df.properties)).show()
 
+    # map_keys() - Get all map keys
+    df.select(df.name, map_keys(df.properties)).show()
 
+    # In case you wanted to get all map keys as Python List.
+    keysDF = df.select(explode(map_keys(df.properties))).distinct()
+    keysList = keysDF.rdd.map(lambda x: x[0]).collect()
+    print(keysList)
+    # ['eye', 'hair']
 
-
-
-
-
+    # map_values() -- get all map values
+    df.select(df.name, map_values(df.properties)).show()
