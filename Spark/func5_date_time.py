@@ -24,3 +24,37 @@ def date_time_func(spark):
 
     df.select(col("input"),to_date(col("input"), "yyyy-MM-dd.HH.mm.ss.SSS").alias("to_date")).show()
 
+
+    # datediff() function
+    df.select(col("input"),
+              datediff(current_date(), col("input")).alias("datediff")
+              ).show()
+
+    # months_between()
+    df.select(col("input"),
+              months_between(current_date(), col("input")).alias("months_between")
+              ).show()
+
+    #add_months(), date_add(), date_sub()
+    df.select(col("input"),
+              add_months(col("input"), 3).alias("add_months"),
+            add_months(col("input"), -3).alias("sub_months"),
+            date_add(col("input"), 4).alias("date_add"),
+            date_sub(col("input"), 4).alias("date_sub")
+            ).show()
+
+    #year(), month(), month(), next_day(), weekofyear()
+    df.select(col("input"),
+              year(col("input")).alias("year"),
+              month(col("input")).alias("month"),
+              next_day(col("input"), "Sunday").alias("next_day"),
+              weekofyear(col("input")).alias("weekofyear")
+              ).show()
+
+    # dayofweek(), dayofmonth(), dayofyear()
+    df.select(col("input"),
+              dayofweek(current_date()).alias("dayofweek"),
+              dayofmonth(current_date()).alias("dayofmonth"),
+              dayofyear(current_date()).alias("dayofyear"),
+              ).show()
+
