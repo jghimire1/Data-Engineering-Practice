@@ -37,7 +37,24 @@ def windowFunction(spark):
     df.withColumn("dense_rank", dense_rank().over(windowSpec)) \
             .show(truncate = False)
 
-  
+    # lag() window function
+    print("Output using the lag() function.-----------")
+    df.withColumn("lag", lag("salary",2).over(windowSpec)) \
+        .show(truncate = False)
+
+    print("lag by one position------------")
+    df.withColumn("lag", lag("salary", 1).over(windowSpec)) \
+        .show(truncate=False)
+
+    # lead() window function
+    print("output using the lead window function............")
+    df.withColumn("lead", lead("salary",2).over(windowSpec)) \
+            .show(truncate = False)
+
+    print("lead by one position------------")
+    df.withColumn("lead", lead("salary", 1).over(windowSpec)) \
+        .show(truncate=False)
+
 
 
 
