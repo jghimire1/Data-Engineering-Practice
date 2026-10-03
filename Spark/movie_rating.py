@@ -70,3 +70,21 @@ def movie_rating(spark):
         (6, 103, 5, 1622388140003)
 
     ]
+
+
+    rating_columns = ['user_id','movie_id', 'review_comment','user_location']
+    df_newratings = spark.createDataFrame(rating_detail, rating_columns)
+    print("New ratings dataframe.....")
+    df_newratings.show(truncate = False)
+
+    # Union of the data
+    df_union = df.union(df_newratings)
+    print("Union of the dataframe df and df_newratings.....")
+    df_union.show(truncate = False)
+
+    # 8. Temporary view and SQL - create a temp view and find the top-rated movies.
+    df.createOrReplaceTempView('ratings')
+    sql_result = spark.sql('SELECT movie_id, AVG(rating) as avg_rating FROM ratings GROUP BY movie_id ORDER BY avg_rating DESC LIMIT 10')
+    print("Data from the temporary view ratings.")
+    sql_result.show()
+    
