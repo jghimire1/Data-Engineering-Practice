@@ -50,3 +50,20 @@ customer_spending_rdd.collect()
 # c. groupByKey() transformation - Get a list of all products purchased by each customer.
 customer_products_rdd = pair_rdd.groupByKey().mapValues(list)
 customer_products_rdd.collect()
+
+# Step 5
+# Join with product_category_rdd to get category information for each product purchased by customers.
+
+# Define the product_category_rdd for joining with transaction data
+product_category_data = [
+    ('Laptop', 'Electronics'),
+    ('Headphones', 'Electronics'),
+    ('Book', 'Books'),
+    ('Chair', 'Furniture')
+    ]
+
+product_category_rdd = sc.parallelize(product_category_data)
+product_category_rdd.collect()
+
+customer_product_category_rdd = pair_rdd.map(lambda x:(x[1][0], (x[0], x[1][1]))).join(product_category_rdd)
+customer_product_category_rdd.collect()
