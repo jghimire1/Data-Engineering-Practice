@@ -35,3 +35,18 @@ high_quantity_rdd.collect()
 # extract all products bought by customers to understand the diversity in purchases.
 products_flat_rdd = transactions_tuple_rdd.flatMap(lambda x: [x[3]])
 products_flat_rdd.collect()
+
+
+# Step 4
+# a. Creating a pair RDD - Create a pair RDD of (customer_id, (product_name, total_price)) for further analysis.
+pair_rdd = transactions_tuple_rdd.map(lambda x:(x[1], (x[3], float(x[5]) * int(x[6]))))
+# customer_id (column index 1), (product_name (column index 3), total price (price(column 5)* quantity (column 6))
+pair_rdd.collect()
+
+# b. reduceByKey() transformation - find the total amount spent by each customer.
+customer_spending_rdd = pair_rdd.map(lambda x: (x[0],x[1][1])).reduceByKey(lambda x, y:x+y)
+customer_spending_rdd.collect()
+
+# c. groupByKey() transformation - Get a list of all products purchased by each customer.
+customer_products_rdd = pair_rdd.groupByKey().mapValues(list)
+customer_products_rdd.collect()
