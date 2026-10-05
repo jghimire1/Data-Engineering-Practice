@@ -67,3 +67,17 @@ product_category_rdd.collect()
 
 customer_product_category_rdd = pair_rdd.map(lambda x:(x[1][0], (x[0], x[1][1]))).join(product_category_rdd)
 customer_product_category_rdd.collect()
+
+
+# Step 6 - Actions to collects Results
+# a. collect total spending per customer
+total_spending = customer_spending_rdd.collect()
+# b. collect products purchased per customer
+products_per_customer = customer_products_rdd.collect()
+# c. collect product category join results
+product_category_info = customer_product_category_rdd.collect()
+
+# Step 7 - Save the results
+customer_spending_rdd.saveAsTextFile("file:///home/takeo/pycharmprojects/customer_spending")
+customer_products_rdd.saveAsTextFile("file:///home/takeo/pycharmprojects/customer_products")
+customer_product_category_rdd.saveAsTextFile("file:///home/takeo/pycharmprojects/customer_product_category")
