@@ -29,3 +29,11 @@ def books(spark):
     df3 = df2.select("title", when(col("title") != 'ODD HOURS',1).otherwise(0).alias("newHours"))
     print("Assigning 1 when ODD hours is not equal to 1 and otherwise 0 and column naming as newHours: ")
     df3.show(10, truncate = False)
+
+ # Select author and title is TRUE if title has "THE" word in titles and assign this value to a column named as universal
+    df4 = df2.select("author",
+                     "title",
+                     col("title").contains("THE").alias("universal")
+                     )
+    print("selecting author and title is true if title has word 'THE' in titles and assigning this value to a column named universal")
+    df4.show(10, truncate = False)
