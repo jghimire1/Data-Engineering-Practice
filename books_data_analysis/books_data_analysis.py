@@ -37,3 +37,7 @@ def books(spark):
                      )
     print("selecting author and title is true if title has word 'THE' in titles and assigning this value to a column named universal")
     df4.show(10, truncate = False)
+ # Select substring of authro from 1 to 3 and alias as newTitle1
+    df5 = df2.select(df.author.substr(1,3).alias("newTitle1"))
+    print("Select substring of author from 1 to 3 and alias as newTitle1")
+    df5.show(5)
