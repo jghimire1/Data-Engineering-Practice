@@ -15,3 +15,11 @@ def books(spark):
     # counting the number of rows in dataframe
     print("Number of rows in data frame: "+str(df.count()))
 
+# counting the number of distinct rows in data frame
+    distinctDF = df.distinct()
+    print("Distinct row count: "+str(distinctDF.count()))
+
+    # Removing duplicates
+    df2 = df.dropDuplicates()
+    print("Distinct count of the rows after removing duplicates: "+str(df2.count()))
+    df2.show(10,truncate = False)
