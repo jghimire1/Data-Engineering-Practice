@@ -23,3 +23,9 @@ def books(spark):
     df2 = df.dropDuplicates()
     print("Distinct count of the rows after removing duplicates: "+str(df2.count()))
     df2.show(10,truncate = False)
+
+ # Select title and assign 0 or 1 depending on title when title is not odd "ODD HOURS" and assign this value to
+    # a column named as newHours
+    df3 = df2.select("title", when(col("title") != 'ODD HOURS',1).otherwise(0).alias("newHours"))
+    print("Assigning 1 when ODD hours is not equal to 1 and otherwise 0 and column naming as newHours: ")
+    df3.show(10, truncate = False)
