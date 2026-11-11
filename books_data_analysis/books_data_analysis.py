@@ -47,3 +47,9 @@ def books(spark):
     df6 = df2.select(df.author.substr(3, 6).alias("newTitle2"))
     print("Select substring of author from 3 to 6 and alias as newTitle2")
     df6.show(5)
+# show and count all entries in title, author, rank, price columns
+    columns_to_check = ["title", "author", "rank", "price"]
+    print("Show and count all entries in title, author, rank, price columns:")
+    df7 = df2.select([count(c).alias(f"{c}_count") for c in columns_to_check])
+    df7.show(truncate = False)
+
