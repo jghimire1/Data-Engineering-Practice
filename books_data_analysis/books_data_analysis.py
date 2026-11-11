@@ -53,3 +53,7 @@ def books(spark):
     df7 = df2.select([count(c).alias(f"{c}_count") for c in columns_to_check])
     df7.show(truncate = False)
 
+# show rows with for specified authors - "John Sandford", "Emily Giffin"
+    specified_authors = ["John Sandford", "Emily Giffin"]
+    print("Selecting rows with author John Sandford and Emily Giffin:" )
+    df2.filter(col("author").isin(specified_authors)).show(truncate = False)
